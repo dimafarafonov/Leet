@@ -1,0 +1,7 @@
+{
+  "name": "my-project",
+  "type": "module",
+  "dependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
