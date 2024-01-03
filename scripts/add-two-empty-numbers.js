@@ -21,8 +21,6 @@ let addTwoNumbers = function (l1, l2) {
     return recursion(list["next"], `${acc + list.val}`);
   };
 
-  
-
   const firstList = recursion(l1, 0).split("").reverse().join("");
 
   console.log(firstList);
@@ -43,15 +41,30 @@ let addTwoNumbers = function (l1, l2) {
       return acc;
     }
 
+    console.log("acc", acc);
 
-    acc['next'] =  { val: array[0], next: null }; // can't get recursive concartaneted object
+    // for (let keyNext in acc) {
+    //   if (keyNext === "next") {
+    //     if (!acc[keyNext]) {
+    //       acc[keyNext] = { val: array[0], next: null };
+    //     }
+    //   }
+    //   console.log("nextValue", keyNext);
+    // }
+
+    // if (!Object.keys(acc).length) { // for first init
+    //   acc = { val: array[0], next: null };
+    // }
+
+    // could be the solution, but not completed
     array.shift();
+
     return reverseRecursion(array, acc);
   };
 
-  const output = reverseRecursion(outputStage1, { val: outputStage1[0], next: null });
+  const output = reverseRecursion(outputStage1, {});
 
-  console.log(output)
+  console.log("123", output);
   //   let l1Sum = l1
   //     .reverse()
   //     .reduce((acc, currentValue) => String(acc) + String(currentValue));
