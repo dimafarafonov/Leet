@@ -1,4 +1,4 @@
-import { palindrom, addTwoNumbers } from "./scripts/index.js";
+import { palindrom, addTwoNumbers, list1, list2 } from "./scripts/index.js";
 
 // palindrom(-515)
-addTwoNumbers(0, 0);
+addTwoNumbers(list1, list2);
