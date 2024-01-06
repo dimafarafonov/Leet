@@ -6,7 +6,7 @@ var lengthOfLongestSubstring = function (s) {};
 
 export { lengthOfLongestSubstring };
 
-// preparing for next func
+// preparing for next func, hard day, but small step is done
 // Example 1:
 
 // Input: s = "abcabcbb"
