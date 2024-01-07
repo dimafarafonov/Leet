@@ -2,10 +2,19 @@
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) {};
+var lengthOfLongestSubstring = function (s) {
+  let array = [];
+  s.split("").map((item, index) => {
+    if (s.includes(item)) {
+    //   console.log("item index", item, index);
+    }
+    // just selecting approach
+  });
+};
 
 export { lengthOfLongestSubstring };
 
+export const example1 = "abcabcbb";
 // preparing for next func, hard day, but small step is done
 // Example 1:
 
