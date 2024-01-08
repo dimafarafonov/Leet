@@ -32,3 +32,6 @@ export const example1 = "abcabcbb";
 // Output: 3
 // Explanation: The answer is "wke", with the length of 3.
 // Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
+
+// coding to much on main work, resting
