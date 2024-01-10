@@ -3,12 +3,17 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
+  let accumulator = "";
+  let theLongestSequence = "";
   s.split("").map((item, index) => {
-    if (s.includes(item)) {
-    //   console.log("item index", item, index);
+    if (accumulator.includes(item)) {
+      theLongestSequence = accumulator;
     }
-    // just selecting approach
+
+    accumulator = accumulator + item;
   });
+
+  console.log(accumulator); // something is unclear here but made the approach
 };
 // to hard
 export { lengthOfLongestSubstring };
@@ -31,6 +36,5 @@ export const example1 = "abcabcbb";
 // Output: 3
 // Explanation: The answer is "wke", with the length of 3.
 // Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
-
 
 // coding to much on main work, resting
