@@ -8,12 +8,13 @@ var lengthOfLongestSubstring = function (s) {
   s.split("").map((item, index) => {
     if (accumulator.includes(item)) {
       theLongestSequence = accumulator;
+      accumulator = "";
     }
 
     accumulator = accumulator + item;
   });
 
-  console.log(accumulator); // something is unclear here but made the approach
+  console.log(theLongestSequence); // something is unclear here but made the approach
 };
 // to hard
 export { lengthOfLongestSubstring };
