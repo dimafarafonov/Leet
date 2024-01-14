@@ -28,3 +28,4 @@ class ExampleClass {
 
 const entity = new ExampleClass()
 // continue on decorats : set up nodemon watching tsx files
+// was working with generics
