@@ -2,28 +2,23 @@
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) {
+var lengthOfLongestSubstring = function (s) { // sliding window technique
   const subStringArray = s.split("");
 
-  let theLongest = "";
-  let accumulator = "";
-  for (let i = 0; i < subStringArray.length; i++) {
-    // console.log('accumulator', accumulator)
-    if (accumulator.includes(subStringArray[i])) {
-      theLongest = theLongest.length >= accumulator.length ? theLongest : accumulator;
-      accumulator = "";
-    }
-    accumulator += subStringArray[i];
-  }
+  let startWindowIndex = 0;
+  let endWindowIndex = subStringArray.length;
 
-  // longestAcc = longestAcc.length? longestAcc : temp
-  console.log("the longest", theLongest);
-  // console.log("splited", splited);
+  let accumulator = subStringArray[0];
+  for (let i = 1; i <= subStringArray.length; i++) {
+    if (accumulator.includes(subStringArray[i])) {
+    }
+  }
 };
-// to hard
+
 export { lengthOfLongestSubstring };
 
-export const example1 = ["dvdf", "abcabcbb", "bbbbb", "pwwkew"]; // TODO: this example is not working
+export const example1 = ["dvdf"];
+// export const example1 = ["dvdf", "abcabcbb", "bbbbb", "pwwkew"];
 
 // one more example: dvdf
 // Example 1:
