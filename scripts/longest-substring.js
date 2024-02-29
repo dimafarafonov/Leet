@@ -3,38 +3,27 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
-  let longUnique = "";
-  let theLongest = ""
-  let temp = "";
-  s.split("").filter((item) => {
-    if (temp.length >= longUnique.length) {
-      longUnique = temp;
-      temp = "";
+  const subStringArray = s.split("");
+
+  let theLongest = "";
+  let accumulator = "";
+  for (let i = 0; i < subStringArray.length; i++) {
+    // console.log('accumulator', accumulator)
+    if (accumulator.includes(subStringArray[i])) {
+      theLongest = theLongest.length >= accumulator.length ? theLongest : accumulator;
+      accumulator = "";
     }
+    accumulator += subStringArray[i];
+  }
 
-    if (longUnique.includes(item)) {
-      temp += item;
-      longUnique = item;
-    } else {
-      longUnique += item;
-    }
-
-    theLongest = theLongest.length <= longUnique.length ? longUnique : theLongest
-    // console.log("temp", temp);
-    // console.log("longUnique", longUnique);
-
-    return true;
-  });
-
-  // longUnique = longUnique.length? longUnique : temp
-  console.log("ergergre", theLongest);
+  // longestAcc = longestAcc.length? longestAcc : temp
+  console.log("the longest", theLongest);
   // console.log("splited", splited);
 };
 // to hard
 export { lengthOfLongestSubstring };
 
-export const example1 = "dvdf"; // TODO: this example is not working
-
+export const example1 = ["dvdf", "abcabcbb", "bbbbb", "pwwkew"]; // TODO: this example is not working
 
 // one more example: dvdf
 // Example 1:

@@ -9,4 +9,6 @@ import {
 
 // palindrom(-515)
 // addTwoNumbers(list1, list2);
-lengthOfLongestSubstring(example1);
+example1.map((sample) => {
+  lengthOfLongestSubstring(sample);
+});
