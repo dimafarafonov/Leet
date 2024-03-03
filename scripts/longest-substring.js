@@ -2,22 +2,32 @@
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) { // sliding window technique
-  const subStringArray = s.split("");
-
-  let startWindowIndex = 0;
-  let endWindowIndex = subStringArray.length;
-
-  let accumulator = subStringArray[0];
-  for (let i = 1; i <= subStringArray.length; i++) {
-    if (accumulator.includes(subStringArray[i])) {
+var lengthOfLongestSubstring = function (s) {
+  // sliding window technique
+  let maxSize = 0;
+  let leftPointer = 0;
+  // let rightPointer = 0;
+  let runningValue = new Set();
+  for (let rightPointer = 0; rightPointer < s.length; ) {
+    const letter = s[rightPointer];
+    if (!runningValue.has(letter)) {
+      runningValue.add(letter);
+      maxSize = Math.max(runningValue.size, maxSize); // need to finish
+      rightPointer++;
+    } else {
+      runningValue.delete(s[leftPointer]);
+      leftPointer++;
     }
   }
+
+  console.log("runningValue", runningValue);
+  // console.log("", runningValue);
+  console.log("size", maxSize);
 };
 
 export { lengthOfLongestSubstring };
 
-export const example1 = ["dvdf"];
+export const example1 = ["pwwkew"];
 // export const example1 = ["dvdf", "abcabcbb", "bbbbb", "pwwkew"];
 
 // one more example: dvdf
@@ -39,3 +49,7 @@ export const example1 = ["dvdf"];
 // Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
 // coding to much on main work, resting
+
+
+// Results: we done runtime 82ms beats - 62.79%, memory 53.61mb - beats 47.15$ 
+// but range of runtime could be from 69 up to 88 - strange
